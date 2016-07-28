@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		780952D11D4ABF4D00C3F86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780952D01D4ABF4D00C3F86C /* AppDelegate.swift */; };
+		780952D31D4ABF4D00C3F86C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780952D21D4ABF4D00C3F86C /* ViewController.swift */; };
+		780952D61D4ABF4D00C3F86C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780952D41D4ABF4D00C3F86C /* Main.storyboard */; };
+		780952D81D4ABF4D00C3F86C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780952D71D4ABF4D00C3F86C /* Assets.xcassets */; };
+		780952DB1D4ABF4D00C3F86C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780952D91D4ABF4D00C3F86C /* LaunchScreen.storyboard */; };
+		780952E61D4ABF4D00C3F86C /* MultipleGraphPlotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780952E51D4ABF4D00C3F86C /* MultipleGraphPlotTests.swift */; };
+		780952F11D4ABF4D00C3F86C /* MultipleGraphPlotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780952F01D4ABF4D00C3F86C /* MultipleGraphPlotUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		780952E21D4ABF4D00C3F86C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 780952C51D4ABF4D00C3F86C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 780952CC1D4ABF4D00C3F86C;
+			remoteInfo = MultipleGraphPlot;
+		};
+		780952ED1D4ABF4D00C3F86C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 780952C51D4ABF4D00C3F86C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 780952CC1D4ABF4D00C3F86C;
+			remoteInfo = MultipleGraphPlot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		780952CD1D4ABF4D00C3F86C /* MultipleGraphPlot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultipleGraphPlot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		780952D01D4ABF4D00C3F86C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		780952D21D4ABF4D00C3F86C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		780952D51D4ABF4D00C3F86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		780952D71D4ABF4D00C3F86C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		780952DA1D4ABF4D00C3F86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		780952DC1D4ABF4D00C3F86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		780952E11D4ABF4D00C3F86C /* MultipleGraphPlotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipleGraphPlotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		780952E51D4ABF4D00C3F86C /* MultipleGraphPlotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleGraphPlotTests.swift; sourceTree = "<group>"; };
+		780952E71D4ABF4D00C3F86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		780952EC1D4ABF4D00C3F86C /* MultipleGraphPlotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipleGraphPlotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		780952F01D4ABF4D00C3F86C /* MultipleGraphPlotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleGraphPlotUITests.swift; sourceTree = "<group>"; };
+		780952F21D4ABF4D00C3F86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		780952CA1D4ABF4D00C3F86C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780952DE1D4ABF4D00C3F86C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780952E91D4ABF4D00C3F86C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		780952C41D4ABF4D00C3F86C = {
+			isa = PBXGroup;
+			children = (
+				780952CF1D4ABF4D00C3F86C /* MultipleGraphPlot */,
+				780952E41D4ABF4D00C3F86C /* MultipleGraphPlotTests */,
+				780952EF1D4ABF4D00C3F86C /* MultipleGraphPlotUITests */,
+				780952CE1D4ABF4D00C3F86C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		780952CE1D4ABF4D00C3F86C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				780952CD1D4ABF4D00C3F86C /* MultipleGraphPlot.app */,
+				780952E11D4ABF4D00C3F86C /* MultipleGraphPlotTests.xctest */,
+				780952EC1D4ABF4D00C3F86C /* MultipleGraphPlotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		780952CF1D4ABF4D00C3F86C /* MultipleGraphPlot */ = {
+			isa = PBXGroup;
+			children = (
+				780952D01D4ABF4D00C3F86C /* AppDelegate.swift */,
+				780952D21D4ABF4D00C3F86C /* ViewController.swift */,
+				780952D41D4ABF4D00C3F86C /* Main.storyboard */,
+				780952D71D4ABF4D00C3F86C /* Assets.xcassets */,
+				780952D91D4ABF4D00C3F86C /* LaunchScreen.storyboard */,
+				780952DC1D4ABF4D00C3F86C /* Info.plist */,
+			);
+			path = MultipleGraphPlot;
+			sourceTree = "<group>";
+		};
+		780952E41D4ABF4D00C3F86C /* MultipleGraphPlotTests */ = {
+			isa = PBXGroup;
+			children = (
+				780952E51D4ABF4D00C3F86C /* MultipleGraphPlotTests.swift */,
+				780952E71D4ABF4D00C3F86C /* Info.plist */,
+			);
+			path = MultipleGraphPlotTests;
+			sourceTree = "<group>";
+		};
+		780952EF1D4ABF4D00C3F86C /* MultipleGraphPlotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				780952F01D4ABF4D00C3F86C /* MultipleGraphPlotUITests.swift */,
+				780952F21D4ABF4D00C3F86C /* Info.plist */,
+			);
+			path = MultipleGraphPlotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		780952CC1D4ABF4D00C3F86C /* MultipleGraphPlot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780952F51D4ABF4D00C3F86C /* Build configuration list for PBXNativeTarget "MultipleGraphPlot" */;
+			buildPhases = (
+				780952C91D4ABF4D00C3F86C /* Sources */,
+				780952CA1D4ABF4D00C3F86C /* Frameworks */,
+				780952CB1D4ABF4D00C3F86C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultipleGraphPlot;
+			productName = MultipleGraphPlot;
+			productReference = 780952CD1D4ABF4D00C3F86C /* MultipleGraphPlot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		780952E01D4ABF4D00C3F86C /* MultipleGraphPlotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780952F81D4ABF4D00C3F86C /* Build configuration list for PBXNativeTarget "MultipleGraphPlotTests" */;
+			buildPhases = (
+				780952DD1D4ABF4D00C3F86C /* Sources */,
+				780952DE1D4ABF4D00C3F86C /* Frameworks */,
+				780952DF1D4ABF4D00C3F86C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				780952E31D4ABF4D00C3F86C /* PBXTargetDependency */,
+			);
+			name = MultipleGraphPlotTests;
+			productName = MultipleGraphPlotTests;
+			productReference = 780952E11D4ABF4D00C3F86C /* MultipleGraphPlotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		780952EB1D4ABF4D00C3F86C /* MultipleGraphPlotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780952FB1D4ABF4D00C3F86C /* Build configuration list for PBXNativeTarget "MultipleGraphPlotUITests" */;
+			buildPhases = (
+				780952E81D4ABF4D00C3F86C /* Sources */,
+				780952E91D4ABF4D00C3F86C /* Frameworks */,
+				780952EA1D4ABF4D00C3F86C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				780952EE1D4ABF4D00C3F86C /* PBXTargetDependency */,
+			);
+			name = MultipleGraphPlotUITests;
+			productName = MultipleGraphPlotUITests;
+			productReference = 780952EC1D4ABF4D00C3F86C /* MultipleGraphPlotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		780952C51D4ABF4D00C3F86C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Nafisa;
+				TargetAttributes = {
+					780952CC1D4ABF4D00C3F86C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					780952E01D4ABF4D00C3F86C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 780952CC1D4ABF4D00C3F86C;
+					};
+					780952EB1D4ABF4D00C3F86C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 780952CC1D4ABF4D00C3F86C;
+					};
+				};
+			};
+			buildConfigurationList = 780952C81D4ABF4D00C3F86C /* Build configuration list for PBXProject "MultipleGraphPlot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 780952C41D4ABF4D00C3F86C;
+			productRefGroup = 780952CE1D4ABF4D00C3F86C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				780952CC1D4ABF4D00C3F86C /* MultipleGraphPlot */,
+				780952E01D4ABF4D00C3F86C /* MultipleGraphPlotTests */,
+				780952EB1D4ABF4D00C3F86C /* MultipleGraphPlotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		780952CB1D4ABF4D00C3F86C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780952DB1D4ABF4D00C3F86C /* LaunchScreen.storyboard in Resources */,
+				780952D81D4ABF4D00C3F86C /* Assets.xcassets in Resources */,
+				780952D61D4ABF4D00C3F86C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780952DF1D4ABF4D00C3F86C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780952EA1D4ABF4D00C3F86C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		780952C91D4ABF4D00C3F86C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780952D31D4ABF4D00C3F86C /* ViewController.swift in Sources */,
+				780952D11D4ABF4D00C3F86C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780952DD1D4ABF4D00C3F86C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780952E61D4ABF4D00C3F86C /* MultipleGraphPlotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780952E81D4ABF4D00C3F86C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780952F11D4ABF4D00C3F86C /* MultipleGraphPlotUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		780952E31D4ABF4D00C3F86C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 780952CC1D4ABF4D00C3F86C /* MultipleGraphPlot */;
+			targetProxy = 780952E21D4ABF4D00C3F86C /* PBXContainerItemProxy */;
+		};
+		780952EE1D4ABF4D00C3F86C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 780952CC1D4ABF4D00C3F86C /* MultipleGraphPlot */;
+			targetProxy = 780952ED1D4ABF4D00C3F86C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		780952D41D4ABF4D00C3F86C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				780952D51D4ABF4D00C3F86C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		780952D91D4ABF4D00C3F86C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				780952DA1D4ABF4D00C3F86C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		780952F31D4ABF4D00C3F86C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		780952F41D4ABF4D00C3F86C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		780952F61D4ABF4D00C3F86C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MultipleGraphPlot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nafisa.MultipleGraphPlot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		780952F71D4ABF4D00C3F86C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MultipleGraphPlot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nafisa.MultipleGraphPlot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		780952F91D4ABF4D00C3F86C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MultipleGraphPlotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nafisa.MultipleGraphPlotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MultipleGraphPlot.app/MultipleGraphPlot";
+			};
+			name = Debug;
+		};
+		780952FA1D4ABF4D00C3F86C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MultipleGraphPlotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nafisa.MultipleGraphPlotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MultipleGraphPlot.app/MultipleGraphPlot";
+			};
+			name = Release;
+		};
+		780952FC1D4ABF4D00C3F86C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MultipleGraphPlotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nafisa.MultipleGraphPlotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MultipleGraphPlot;
+			};
+			name = Debug;
+		};
+		780952FD1D4ABF4D00C3F86C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MultipleGraphPlotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nafisa.MultipleGraphPlotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MultipleGraphPlot;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		780952C81D4ABF4D00C3F86C /* Build configuration list for PBXProject "MultipleGraphPlot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780952F31D4ABF4D00C3F86C /* Debug */,
+				780952F41D4ABF4D00C3F86C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		780952F51D4ABF4D00C3F86C /* Build configuration list for PBXNativeTarget "MultipleGraphPlot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780952F61D4ABF4D00C3F86C /* Debug */,
+				780952F71D4ABF4D00C3F86C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		780952F81D4ABF4D00C3F86C /* Build configuration list for PBXNativeTarget "MultipleGraphPlotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780952F91D4ABF4D00C3F86C /* Debug */,
+				780952FA1D4ABF4D00C3F86C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		780952FB1D4ABF4D00C3F86C /* Build configuration list for PBXNativeTarget "MultipleGraphPlotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780952FC1D4ABF4D00C3F86C /* Debug */,
+				780952FD1D4ABF4D00C3F86C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 780952C51D4ABF4D00C3F86C /* Project object */;
+}
