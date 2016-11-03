@@ -48,7 +48,7 @@ class graphParam {
     var graphTitle : String = "Multiple Plots"
     
     //graph title color
-    var graphTitleColor : CGColor = UIColor.blueColor().CGColor
+    var graphTitleColor : CGColor = UIColor.blue.cgColor
     
     //graph title font size
     var graphTitleFontSize  : CGFloat   {
@@ -327,16 +327,16 @@ class graphParam {
     var graphPlotLineStyleWidth : CGFloat = 2.0
     
     //graph plot style line color
-    var graphPlotLineStyleColor : CGColor = UIColor.yellowColor().CGColor
+    var graphPlotLineStyleColor : CGColor = UIColor.yellow.cgColor
     
     
     //MARK: Plot Symbol
     //---------------------------------------------------------
     //plot symbol color
-    var graphPlotSymbolColor : [CGColor] = [UIColor.yellowColor().CGColor,
-        UIColor.redColor().CGColor,
-        UIColor.brownColor().CGColor,
-        UIColor.greenColor().CGColor]
+    var graphPlotSymbolColor : [CGColor] = [UIColor.yellow.cgColor,
+        UIColor.red.cgColor,
+        UIColor.brown.cgColor,
+        UIColor.green.cgColor]
     
     //plot symbol size
     var graphPlotSymbolHeight : CGFloat = 10.0
@@ -345,7 +345,7 @@ class graphParam {
     
     //MARK: Graph Plot Area Background Color
     //---------------------------------------------------------
-    var graphBackGroundColor : CGColor = UIColor(red: 114.0/255.0, green: 227.0/255.0, blue: 251.0/255.0, alpha: 0.5).CGColor
+    var graphBackGroundColor : CGColor = UIColor(red: 114.0/255.0, green: 227.0/255.0, blue: 251.0/255.0, alpha: 0.5).cgColor
     
     //gradient angle
     var gradientAngle : CGFloat = 90
@@ -355,12 +355,12 @@ class graphParam {
     //MARK: Graph Plot Legend
     //---------------------------------------------------------
     //legend fill color
-    var legendFillColor : CGColor = UIColor(red: 114.0/255.0, green: 227.0/255.0, blue: 251.0/255.0, alpha: 0.5).CGColor
+    var legendFillColor : CGColor = UIColor(red: 114.0/255.0, green: 227.0/255.0, blue: 251.0/255.0, alpha: 0.5).cgColor
     
     //legend line color
     // var legendLineColor : CGColor = UIColor(red: 114.0/255.0, green: 227.0/255.0, blue: 251.0/255.0, alpha: 0.5).CGColor
     
-    var legendBorderLineColor : CGColor = UIColor.yellowColor().CGColor
+    var legendBorderLineColor : CGColor = UIColor.yellow.cgColor
     
     //legend corner radius
     var legendCornerRadius : CGFloat = 5.0
@@ -468,7 +468,7 @@ class graphParam {
     //MARK: Axis Title
     //---------------------------------------------------------
     //axis title color
-    var graphAxisTitleColor : CGColor  = UIColor(red: 0.0/255.0, green: 51.0/255.0, blue: 102.0/255.0, alpha: 0.5).CGColor
+    var graphAxisTitleColor : CGColor  = UIColor(red: 0.0/255.0, green: 51.0/255.0, blue: 102.0/255.0, alpha: 0.5).cgColor
     
     //axis title font size
     var graphAxisFontSize : CGFloat{
@@ -589,9 +589,9 @@ class graphParam {
     }
     
     //axis label text color
-    var graphAxisMajorTickLabelTextColor : CGColor = UIColor.darkGrayColor().CGColor
+    var graphAxisMajorTickLabelTextColor : CGColor = UIColor.darkGray.cgColor
     
-    var graphAxisMinorTickLabelTextColor : CGColor = UIColor(red: 0.0/255.0, green: 51.0/255.0, blue: 102.0/255.0, alpha: 0.5).CGColor
+    var graphAxisMinorTickLabelTextColor : CGColor = UIColor(red: 0.0/255.0, green: 51.0/255.0, blue: 102.0/255.0, alpha: 0.5).cgColor
     
     //axis formatter maximum fraction digit
     var graphAxisFormatterMaxFractionDigit = 4
@@ -635,7 +635,7 @@ class graphParam {
     
     
     //axis line color
-    var graphAxisLineColor : CGColor  = UIColor.blackColor().CGColor
+    var graphAxisLineColor : CGColor  = UIColor.black.cgColor
     
     //lower offset
     var graphXAxisConstraint : CGFloat = 0
@@ -670,8 +670,8 @@ class graphParam {
     var minorTickLineWidth : CGFloat = 1.0
     
     //tick line color
-    var majorTickLineColor : CGColor  = UIColor.blueColor().CGColor
-    var minorTickLineColor : CGColor  = UIColor.blueColor().CGColor
+    var majorTickLineColor : CGColor  = UIColor.blue.cgColor
+    var minorTickLineColor : CGColor  = UIColor.blue.cgColor
     
         
     
@@ -682,8 +682,8 @@ class graphParam {
     var graphMinorGridLineStyleWidth : CGFloat = 0.5
     
     //grid line color
-    var graphMajorGridLineColor : CGColor  = UIColor.darkGrayColor().CGColor
-    var graphMinorGridLineColor : CGColor  = UIColor.lightGrayColor().CGColor
+    var graphMajorGridLineColor : CGColor  = UIColor.darkGray.cgColor
+    var graphMinorGridLineColor : CGColor  = UIColor.lightGray.cgColor
     
 }
 

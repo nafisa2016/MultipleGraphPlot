@@ -57,7 +57,7 @@ class ConfigureScatterPlot{
         
         init(){
             graphIdentifier = ""
-            graphLineColor = UIColor.whiteColor().CGColor
+            graphLineColor = UIColor.white.cgColor
             
             dataPointY = []
             dataPointX = []
@@ -76,10 +76,10 @@ class ConfigureScatterPlot{
     
     //MARK: Graph Line colors
     //---------------------------------------------------------
-    var lineColor : [CGColor] = [UIColor.yellowColor().CGColor,
-        UIColor.redColor().CGColor,
-        UIColor.brownColor().CGColor,
-        UIColor.greenColor().CGColor
+    var lineColor : [CGColor] = [UIColor.yellow.cgColor,
+        UIColor.red.cgColor,
+        UIColor.brown.cgColor,
+        UIColor.green.cgColor
     ]
     
     //MARK: Y axis data for each graph

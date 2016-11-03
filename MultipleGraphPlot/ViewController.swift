@@ -67,22 +67,22 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         //MARK: Determine size class
         //---------------------------------------------------------
         //all phone ( except iPhone 6 plus) landscape :compact width & compact height
-        if (self.view.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Compact) &&
-            (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Compact){
+        if (self.view.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact) &&
+            (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact){
             
                 graphParameters.sizeClass = "CC"
         }
             
             //ipad : regular width & regular height
-        else if (self.view.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular) &&
-            (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Regular){
+        else if (self.view.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.regular) &&
+            (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.regular){
                 
                 graphParameters.sizeClass = "RR"
         }
             
             //iPhone 6 plus landscape : regular width & compact height
-        else if (self.view.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular) &&
-            (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Compact){
+        else if (self.view.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.regular) &&
+            (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.compact){
                 // Regular
                 graphParameters.sizeClass = "RC"
         }
@@ -113,9 +113,9 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
     //******************************************************************************
     
     //switch 1
-    @IBAction func switch1Change(sender: UISwitch) {
+    @IBAction func switch1Change(_ sender: UISwitch) {
         
-        if graph1Switch.on {
+        if graph1Switch.isOn {
             graphConfiguration.switchFlags[0] = true
         }
         else{
@@ -128,9 +128,9 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
     }
     
     //switch 2
-    @IBAction func switch2Change(sender: UISwitch) {
+    @IBAction func switch2Change(_ sender: UISwitch) {
         
-        if graph2Switch.on {
+        if graph2Switch.isOn {
             graphConfiguration.switchFlags[1] = true
         }
         else{
@@ -143,9 +143,9 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
     }
     
     //switch 3
-    @IBAction func switch3Change(sender: UISwitch) {
+    @IBAction func switch3Change(_ sender: UISwitch) {
         
-        if graph3Switch.on {
+        if graph3Switch.isOn {
             graphConfiguration.switchFlags[2] = true
         }
         else{
@@ -157,9 +157,9 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
     }
     
     //switch 4
-    @IBAction func switch4Change(sender: UISwitch) {
+    @IBAction func switch4Change(_ sender: UISwitch) {
         
-        if graph4Switch.on {
+        if graph4Switch.isOn {
             graphConfiguration.switchFlags[3] = true
         }
         else{
@@ -189,7 +189,7 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
     
     //MARK: data for plot
     //---------------------------------------------------------
-    func numberForPlot(plot: CPTPlot, field fieldEnum: UInt, recordIndex idx: UInt ) -> AnyObject? {
+    func double(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt ) -> Double {
         
         var plotValue = 0.0
         
@@ -223,13 +223,13 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
                 }
             } // graph identifier not nil
         }
-        return plotValue
+        return plotValue as Double
     }
     
     
     //MARK: number of plots
     //---------------------------------------------------------
-    func numberOfRecordsForPlot(plot: CPTPlot) -> UInt {
+    func numberOfRecords(for plot: CPTPlot) -> UInt {
         
         plotCount = graphConfiguration.scatterPlotArray.count
         return UInt(plotCount)
@@ -251,11 +251,11 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         
         //MARK: create graph
         //---------------------------------------------------------
-        let graph = CPTXYGraph(frame: CGRectZero)
+        let graph = CPTXYGraph(frame: CGRect.zero)
         
         //MARK: apply theme
         //---------------------------------------------------------
-        graph.applyTheme(CPTTheme(named:kCPTPlainWhiteTheme))
+        graph.apply(CPTTheme(named:CPTThemeName.plainWhiteTheme))
         
         //MARK: add to graphview
         //---------------------------------------------------------
@@ -271,10 +271,10 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         //---------------------------------------------------------
         //color,style & displacement
         let titleTextStyle = CPTMutableTextStyle()
-        titleTextStyle.color = CPTColor(CGColor: graphParameters.graphTitleColor)
+        titleTextStyle.color = CPTColor(cgColor: graphParameters.graphTitleColor)
         titleTextStyle.fontSize = graphParameters.graphTitleFontSize
         
-        graph.titleDisplacement = CGPointMake(graphParameters.graphtitleDisplacementX, graphParameters.graphtitleDisplacementY)
+        graph.titleDisplacement = CGPoint(x: graphParameters.graphtitleDisplacementX, y: graphParameters.graphtitleDisplacementY)
         graph.titleTextStyle  = titleTextStyle
         
         
@@ -313,17 +313,17 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         plotSpace.yRange = CPTPlotRange(locationDecimal: CPTDecimalFromFloat(graphParameters.yRangeLocationDecimal), lengthDecimal: CPTDecimalFromFloat(graphParameters.yRangeLengthDecimal))
         
         
-        plotSpace.scaleToFitPlots(graph?.allPlots())
+        plotSpace.scale(toFit: graph?.allPlots())
         
-        graph!.addPlotSpace(plotSpace)
+        graph!.add(plotSpace)
         
         //MARK: gradient background
         //---------------------------------------------------------
-        let plotAreaGradient =  CPTGradient(beginningColor: CPTColor(CGColor: graphParameters.graphBackGroundColor), endingColor: CPTColor.whiteColor())
+        let plotAreaGradient =  CPTGradient(beginning: CPTColor(cgColor: graphParameters.graphBackGroundColor), ending: CPTColor.white())
         plotAreaGradient.angle = graphParameters.gradientAngle
         
         graph?.plotAreaFrame!.plotArea!.fill =  CPTFill(gradient: plotAreaGradient)
-        (color: CPTColor(CGColor: graphParameters.graphBackGroundColor))
+        //(color: CPTColor(cgColor: graphParameters.graphBackGroundColor))
         
         //MARK: plot area frame padding to display title and labels
         //---------------------------------------------------------
@@ -345,28 +345,28 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
                 plot.dataSource = self
                 plot.delegate = self
                 
-                plot.identifier = eachConfig.graphIdentifier
+                plot.identifier = eachConfig.graphIdentifier as (NSCoding & NSCopying & NSObjectProtocol)?
                 
                 //MARK: plot interpolation
                 //---------------------------------------------------------
-                plot.interpolation = CPTScatterPlotInterpolation.Curved
+                plot.interpolation = CPTScatterPlotInterpolation.curved
                 
-                graph!.addPlot(plot)
+                graph!.add(plot)
                 
                 
                 //Set line style. Add interpolation to graph
                 let actualPlotStyle = plot.dataLineStyle!.mutableCopy() as! CPTMutableLineStyle
                 actualPlotStyle.lineWidth = graphParameters.graphPlotLineStyleWidth
-                actualPlotStyle.lineColor = CPTColor(CGColor: eachConfig.graphLineColor)
+                actualPlotStyle.lineColor = CPTColor(cgColor: eachConfig.graphLineColor)
                 plot.dataLineStyle = actualPlotStyle
                 
                 
                 //MARK: plot symbol
                 //---------------------------------------------------------
-                let graphPlotSymbol = CPTPlotSymbol.diamondPlotSymbol()
+                let graphPlotSymbol = CPTPlotSymbol.diamond()
                 
-                graphPlotSymbol.fill = CPTFill.init(color: CPTColor(CGColor: graphParameters.graphPlotSymbolColor[counter]))
-                graphPlotSymbol.size = CGSizeMake(graphParameters.graphPlotSymbolWidth,graphParameters.graphPlotSymbolHeight)
+                graphPlotSymbol.fill = CPTFill.init(color: CPTColor(cgColor: graphParameters.graphPlotSymbolColor[counter]))
+                graphPlotSymbol.size = CGSize(width: graphParameters.graphPlotSymbolWidth,height: graphParameters.graphPlotSymbolHeight)
                 plot.plotSymbol = graphPlotSymbol
                 
                 
@@ -391,20 +391,20 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         
         //MARK: legend background
         //---------------------------------------------------------
-        let legendFill=CPTFill.init(color: CPTColor(CGColor: graphParameters.legendFillColor))
+        let legendFill=CPTFill.init(color: CPTColor(cgColor: graphParameters.legendFillColor))
         theLegend.fill = legendFill
         
         //MARK: legend border
         //---------------------------------------------------------
         let legendLineStyle = CPTMutableLineStyle()
-        legendLineStyle.lineColor = CPTColor(CGColor: graphParameters.legendBorderLineColor)
+        legendLineStyle.lineColor = CPTColor(cgColor: graphParameters.legendBorderLineColor)
         theLegend.borderLineStyle = legendLineStyle
         
         theLegend.cornerRadius = graphParameters.legendCornerRadius
         
         //MARK: legend size
         //---------------------------------------------------------
-        theLegend.swatchSize = CGSizeMake(graphParameters.legendSwatchWidth,graphParameters.legendSwatchHeight)
+        theLegend.swatchSize = CGSize(width: graphParameters.legendSwatchWidth,height: graphParameters.legendSwatchHeight)
         
         //MARK: legend row and column
         //---------------------------------------------------------
@@ -416,8 +416,8 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         
         //MARK: legend position
         //---------------------------------------------------------
-        graph!.legendAnchor = CPTRectAnchor.BottomLeft
-        graph!.legendDisplacement = CGPointMake(graphParameters.legendDisplacementWidth, graphParameters.legendDisplacementHeight)
+        graph!.legendAnchor = CPTRectAnchor.bottomLeft
+        graph!.legendDisplacement = CGPoint(x: graphParameters.legendDisplacementWidth, y: graphParameters.legendDisplacementHeight)
         
     }
     
@@ -432,27 +432,27 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         //axis line style
         let axisLineStyle = CPTMutableLineStyle()
         axisLineStyle.lineWidth = graphParameters.graphXAxisLineWidth
-        axisLineStyle.lineColor = CPTColor(CGColor: graphParameters.graphAxisLineColor)
+        axisLineStyle.lineColor = CPTColor(cgColor: graphParameters.graphAxisLineColor)
         
         //grid line style
         let majorGridLineStyle = CPTMutableLineStyle()
         majorGridLineStyle.lineWidth = graphParameters.graphMajorGridLineStyleWidth
-        majorGridLineStyle.lineColor = CPTColor(CGColor: graphParameters.graphMajorGridLineColor)
+        majorGridLineStyle.lineColor = CPTColor(cgColor: graphParameters.graphMajorGridLineColor)
         
         
         let minorGridLineStyle = CPTMutableLineStyle()
         minorGridLineStyle.lineWidth = graphParameters.graphMinorGridLineStyleWidth
-        minorGridLineStyle.lineColor = CPTColor(CGColor: graphParameters.graphMinorGridLineColor)
+        minorGridLineStyle.lineColor = CPTColor(cgColor: graphParameters.graphMinorGridLineColor)
         
         //major tick style
         let  majorTickLineStyle = CPTMutableLineStyle()
         majorTickLineStyle.lineWidth = graphParameters.majorTickLineWidth
-        majorTickLineStyle.lineColor = CPTColor(CGColor: graphParameters.majorTickLineColor)
+        majorTickLineStyle.lineColor = CPTColor(cgColor: graphParameters.majorTickLineColor)
         
         //minor tick style
         let  minorTickLineStyle = CPTMutableLineStyle()
         minorTickLineStyle.lineWidth = graphParameters.minorTickLineWidth
-        minorTickLineStyle.lineColor = CPTColor(CGColor: graphParameters.minorTickLineColor)
+        minorTickLineStyle.lineColor = CPTColor(cgColor: graphParameters.minorTickLineColor)
         
         
         
@@ -460,15 +460,15 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         //---------------------------------------------------------
         let  axisMajorTickLabelTextStyle = CPTMutableTextStyle()
         axisMajorTickLabelTextStyle.fontSize = graphParameters.graphAxisMajorTickLabelFontSize
-        axisMajorTickLabelTextStyle.color = CPTColor(CGColor: graphParameters.graphAxisMajorTickLabelTextColor)
+        axisMajorTickLabelTextStyle.color = CPTColor(cgColor: graphParameters.graphAxisMajorTickLabelTextColor)
         
         let  axisMinorTickLabelTextStyle = CPTMutableTextStyle()
         axisMinorTickLabelTextStyle.fontSize = graphParameters.graphAxisMinorTickLabelFontSize
-        axisMinorTickLabelTextStyle.color = CPTColor(CGColor: graphParameters.graphAxisMinorTickLabelTextColor)
+        axisMinorTickLabelTextStyle.color = CPTColor(cgColor: graphParameters.graphAxisMinorTickLabelTextColor)
         
         //MARK: axis label value formatter
         //---------------------------------------------------------
-        let axisFormatter = NSNumberFormatter()
+        let axisFormatter = NumberFormatter()
         axisFormatter.maximumFractionDigits = graphParameters.graphAxisFormatterMaxFractionDigit
         axisFormatter.minimumIntegerDigits = graphParameters.graphAxisFormatterMinIntegerDigit
         
@@ -476,7 +476,7 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         //MARK: set text style and font for axis title
         //---------------------------------------------------------
         let xts = CPTMutableTextStyle()
-        xts.color = CPTColor(CGColor: graphParameters.graphAxisTitleColor)
+        xts.color = CPTColor(cgColor: graphParameters.graphAxisTitleColor)
         xts.fontSize = graphParameters.graphAxisFontSize
         
         
@@ -486,36 +486,36 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         let axisSet = graphView.hostedGraph!.axisSet as! CPTXYAxisSet!
         
         //x axis
-        let xAxis = axisSet.xAxis as CPTXYAxis!
+        let xAxis = axisSet?.xAxis as CPTXYAxis!
         
         //y axis
-        let yAxis = axisSet.yAxis as CPTXYAxis!
+        let yAxis = axisSet?.yAxis as CPTXYAxis!
         
         //x and y axis intersection
-        xAxis.orthogonalPosition = graphParameters.graphYAxisIntersectionPos
-        yAxis.orthogonalPosition = graphParameters.graphXAxisIntersectionPos
+        xAxis?.orthogonalPosition = graphParameters.graphYAxisIntersectionPos as NSNumber?
+        yAxis?.orthogonalPosition = graphParameters.graphXAxisIntersectionPos as NSNumber?
         
         //lower offset -> y axis on left,x axis at bottom
-        yAxis.axisConstraints = CPTConstraints(lowerOffset:   graphParameters.graphYAxisConstraint)
+        yAxis?.axisConstraints = CPTConstraints(lowerOffset:   graphParameters.graphYAxisConstraint)
         
         
         
         //MARK: axis line style
         //---------------------------------------------------------
-        xAxis.axisLineStyle = axisLineStyle
-        yAxis.axisLineStyle = axisLineStyle
+        xAxis?.axisLineStyle = axisLineStyle
+        yAxis?.axisLineStyle = axisLineStyle
         
         
         //MARK: axis title
         //---------------------------------------------------------
         //x axis title
-        xAxis.axisTitle = CPTAxisTitle(text: graphParameters.graphXAxisTitle, textStyle: xts)
+        xAxis?.axisTitle = CPTAxisTitle(text: graphParameters.graphXAxisTitle, textStyle: xts)
         
         //y axis title
-        yAxis.axisTitle = CPTAxisTitle(text: graphParameters.graphYAxisTitle, textStyle: xts)
+        yAxis?.axisTitle = CPTAxisTitle(text: graphParameters.graphYAxisTitle, textStyle: xts)
         
         //offset of title from axis
-        yAxis.titleOffset = graphParameters.graphYAxisTitleOffset
+        yAxis?.titleOffset = graphParameters.graphYAxisTitleOffset
         
         
         
@@ -523,26 +523,26 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         //---------------------------------------------------------
         
         //label formatting
-        xAxis.labelFormatter = axisFormatter
-        xAxis.labelTextStyle = axisMajorTickLabelTextStyle
+        xAxis?.labelFormatter = axisFormatter
+        xAxis?.labelTextStyle = axisMajorTickLabelTextStyle
         
-        yAxis.labelFormatter = axisFormatter
-        yAxis.labelTextStyle = axisMajorTickLabelTextStyle
-        yAxis.setNeedsRelabel()
+        yAxis?.labelFormatter = axisFormatter
+        yAxis?.labelTextStyle = axisMajorTickLabelTextStyle
+        yAxis?.setNeedsRelabel()
         
         //  xAxis.majorTickLabelTextStyle = axisMajorTickLabelTextStyle
-        xAxis.minorTickLabelTextStyle = axisMinorTickLabelTextStyle
+        xAxis?.minorTickLabelTextStyle = axisMinorTickLabelTextStyle
         
         //  yAxis.minorTickLabelTextStyle = axisMajorTickLabelTextStyle
-        yAxis.minorTickLabelTextStyle = axisMinorTickLabelTextStyle
+        yAxis?.minorTickLabelTextStyle = axisMinorTickLabelTextStyle
         
         //offset of label from axis
-        xAxis.labelOffset = graphParameters.graphXAxisLabelOffset
-        yAxis.labelOffset = graphParameters.graphYAxisLabelOffset
+        xAxis?.labelOffset = graphParameters.graphXAxisLabelOffset
+        yAxis?.labelOffset = graphParameters.graphYAxisLabelOffset
         
         
         //label rotation
-        xAxis.labelRotation = graphParameters.graphAxisLabelRotation
+        xAxis?.labelRotation = graphParameters.graphAxisLabelRotation
         
         
         //MARK: axis grid
@@ -551,8 +551,8 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         //xAxis.majorGridLineStyle = majorGridLineStyle
         
         //y axis grid
-        yAxis.majorGridLineStyle = majorGridLineStyle
-        yAxis.minorGridLineStyle =  minorGridLineStyle
+        yAxis?.majorGridLineStyle = majorGridLineStyle
+        yAxis?.minorGridLineStyle =  minorGridLineStyle
         
         
         //MARK: axis ticks
@@ -560,21 +560,21 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         //Set interval at which ticks appear on axes
         
         //xAxis.preferredNumberOfMajorTicks = graphParameters.graphXAxisMajorTickNum
-        yAxis.preferredNumberOfMajorTicks = graphParameters.graphYAxisMajorTickNum
+        yAxis?.preferredNumberOfMajorTicks = graphParameters.graphYAxisMajorTickNum
         
         //minor tick length
         
-        yAxis.minorTickLength = graphParameters.graphYAxisMinorTickLength
-        xAxis.minorTickLength = graphParameters.graphXAxisMinorTickLength
+        yAxis?.minorTickLength = graphParameters.graphYAxisMinorTickLength
+        xAxis?.minorTickLength = graphParameters.graphXAxisMinorTickLength
         
         //how many minor ticks between 2 major ticks
-        yAxis.minorTicksPerInterval =  graphParameters.graphYAxisMinorTickInterval
-        xAxis.minorTicksPerInterval = graphParameters.graphXAxisMinorTickInterval
+        yAxis?.minorTicksPerInterval =  graphParameters.graphYAxisMinorTickInterval
+        xAxis?.minorTicksPerInterval = graphParameters.graphXAxisMinorTickInterval
         
         //value of one major interval
         
-        yAxis.majorIntervalLength = graphParameters.graphYAxisMajorIntervalLength
-        xAxis.majorIntervalLength = graphParameters.graphXAxisMinorTickInterval
+        yAxis?.majorIntervalLength = graphParameters.graphYAxisMajorIntervalLength as NSNumber?
+        xAxis?.majorIntervalLength = graphParameters.graphXAxisMinorTickInterval as NSNumber?
         
         
         //xAxis.tickDirection = CPTSign.Negative
@@ -583,16 +583,16 @@ class ViewController: UIViewController, CPTPlotDataSource, CPTPlotDelegate, CPTP
         // xAxis.tickLabelDirection = CPTSign.Negative
         
         //x axis ticks
-        xAxis.majorTickLineStyle = majorTickLineStyle
-        xAxis.minorTickLineStyle = minorTickLineStyle
+        xAxis?.majorTickLineStyle = majorTickLineStyle
+        xAxis?.minorTickLineStyle = minorTickLineStyle
         
         //y axis ticks
-        yAxis.majorTickLineStyle = majorTickLineStyle
-        yAxis.minorTickLineStyle = minorTickLineStyle
+        yAxis?.majorTickLineStyle = majorTickLineStyle
+        yAxis?.minorTickLineStyle = minorTickLineStyle
         
         //required to show minor tick label values
-        yAxis.minorTickLabelFormatter = axisFormatter
-        xAxis.minorTickLabelFormatter = axisFormatter
+        yAxis?.minorTickLabelFormatter = axisFormatter
+        xAxis?.minorTickLabelFormatter = axisFormatter
     }
     
     //******************************************************************************
